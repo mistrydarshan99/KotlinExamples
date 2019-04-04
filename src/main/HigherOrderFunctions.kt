@@ -16,11 +16,19 @@ fun main() {
         return@function3 "Darshan"
     }
     println(strValue)
+
+    takeString {
+        stringFunction()
+    }
+
+
 }
 
 private fun function1(num: Int, onResponse: () -> Unit) {
     println("------------------------${num}")
-    onResponse.invoke()
+    // Both ways write
+//    onResponse.invoke()
+    onResponse()
 }
 
 private fun function2(num: Int, onResponse: (Int) -> Unit) {
@@ -30,3 +38,11 @@ private fun function2(num: Int, onResponse: (Int) -> Unit) {
 private fun function3(num: Int, onResponse: (Int) -> String) {
     onResponse(num)
 }
+
+private fun takeString(result: () -> String): Int {
+    val s = result()
+    println("My name is $s")
+    return 10
+}
+
+private fun stringFunction() = "Darshan"
