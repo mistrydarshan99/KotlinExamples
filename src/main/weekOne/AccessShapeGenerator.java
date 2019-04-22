@@ -7,5 +7,7 @@ public class AccessShapeGenerator {
         Square square = ShapesGenerator.generateSquare();
 
         System.out.println(rectangle.getHeight() + "=" + rectangle.getWidth());
+
     }
+
 }
