@@ -21,6 +21,7 @@ fun main() {
         stringFunction()
     }
 
+    onViewClick { i -> println("Number is $i") }
 
 }
 
@@ -46,3 +47,7 @@ private fun takeString(result: () -> String): Int {
 }
 
 private fun stringFunction() = "Darshan"
+
+private fun onViewClick(view : (Int) -> Unit) {
+    view(10)
+}
